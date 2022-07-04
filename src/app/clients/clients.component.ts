@@ -1,7 +1,8 @@
-import { ThisReceiver } from '@angular/compiler';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { Client } from '../models/client';
+
 import { ClientService } from '../service/client.service';
+import { Client } from '../models/client';
 
 @Component({
   selector: 'app-clients',
@@ -9,19 +10,13 @@ import { ClientService } from '../service/client.service';
   styleUrls: ['./clients.component.css'],
 })
 export class ClientsComponent implements OnInit {
-  clientList: Client[] = [];
+  clientList!: Client[];
 
   constructor(private clientSrv: ClientService) {}
 
   ngOnInit(): void {
-    this.clientList;
-    console.log('clientsList', this.clientList);
-  }
-
-  getClients() {
-    this.clientSrv.getClients().subscribe((data) => {
-      this.clientList = data;
-      console.log('data');
+    this.clientSrv.getClients().subscribe((clients) => {
+      this.clientList = clients;
     });
   }
 }

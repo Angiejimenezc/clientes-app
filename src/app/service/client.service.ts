@@ -1,17 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Client } from '../models/client';
+import { CLIENTS } from '../clients/clients.json';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ClientService {
-  private readonly baseUrl: string = 'ttp://localhost:8080/api/clients';
+  private readonly apiUrl: string = 'http://localhost:8080/api/';
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   getClients(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.baseUrl);
+    return of(CLIENTS);
   }
 }
