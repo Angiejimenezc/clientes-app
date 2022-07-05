@@ -1,9 +1,9 @@
 export class Client {
   constructor(
     public id: number,
-    public name: String,
-    public surname: String,
-    public email: String,
-    public createAt: String
+    public name: string,
+    public surname: string,
+    public email: string,
+    public createAt: string
   ) {}
 }

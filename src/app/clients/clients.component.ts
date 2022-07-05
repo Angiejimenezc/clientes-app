@@ -10,7 +10,7 @@ import { Client } from '../models/client';
   styleUrls: ['./clients.component.css'],
 })
 export class ClientsComponent implements OnInit {
-  clientList!: Client[];
+  clientList: Client[] = [];
 
   constructor(private clientSrv: ClientService) {}
 
