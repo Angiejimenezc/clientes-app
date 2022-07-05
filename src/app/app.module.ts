@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ClientsComponent } from './clients/clients.component';
 import { ClientService } from './service/client.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { FormComponent } from './clients/form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     FooterComponent,
     ClientsComponent,
     ErrorPageComponent,
+    FormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [ClientService],
   bootstrap: [AppComponent],
 })
