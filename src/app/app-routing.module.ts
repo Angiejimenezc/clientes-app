@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: '404', component: ErrorPageComponent },
   { path: ' ', redirectTo: '/clients', pathMatch: 'full' },
   { path: 'clients', component: ClientsComponent },
-  { path: 'clients/form', component: FormComponent }
+  { path: 'clients/form', component: FormComponent },
+  { path: 'clients/form/:id', component: FormComponent}
 ];
 
 @NgModule({
