@@ -12,12 +12,24 @@
             class="form-control"
             [(ngModel)]="client.name"
             name="name"
-            required
+            required minlength="4"
+            appForbiddenName="bob"
             #name="ngModel"
           />
-          <p class="error-msg" *ngIf="name.invalid && (name.dirty || name.touched)">
-          *Name is required
-        </p>
+     <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert">
+
+  <div *ngIf="name.errors?.['required']">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors?.['minlength']">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors?.['forbiddenName']">
+    Name cannot be Bob.
+  </div>
+
+</div>
         </div>
       </div>
     </form>
