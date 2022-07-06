@@ -1,16 +1,16 @@
-<div class="card border-primary mb-3">
+<div class="card border-secondary mb-3">
   <div class="card-header">Clientes</div>
-  <div class="card-body text-primary">
-    <h5 class="card-title">Listado de Clientes</h5>
+  <div class="card-body text-secondary">
+    <h5 class="card-title">Clients List</h5>
 
 <div class="my-2 text-letft">
-  <button class=" btn btn-rounded btn-primary" type="button" [routerLink]="['/clients/form']">Create Client</button>
+  <button class=" btn btn-rounded btn-dark" type="button" [routerLink]="['/clients/form']">Create Client</button>
 
 </div>
 
     <table class="table table-bordered tabla-striped">
       <thead>
-        <tr>
+        <tr class= "text-center">
           <th>id</th>
           <th>Name</th>
           <th>SurName</th>
@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let client of clientList">
+        <tr *ngFor="let client of clientList" class="text-center">
           <td>{{ client.id}}</td>
           <td>{{ client.name }}</td>
           <td>{{ client.surname}}</td>
