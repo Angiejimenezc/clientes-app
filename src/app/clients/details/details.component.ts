@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/service/client.service';
 import { ActivatedRoute } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-details',
@@ -12,6 +13,9 @@ export class DetailsComponent implements OnInit {
 
   client!: Client;
   title : string = 'Profile';
+  image: any[] = [];
+  private photephotopicked!: File;
+
 
   constructor(
     private clientSrv : ClientService,
@@ -36,4 +40,29 @@ export class DetailsComponent implements OnInit {
     })
 
   }
-}
+
+        capturarFile(event: any): void{
+        this.photephotopicked = event.target.files[0]
+        this.image.push(this.photephotopicked);
+        console.log(this.image);
+
+      }
+        upLoadPhoto(){
+        this.clientSrv.uploadPhoto(this.photephotopicked, this.client.id)
+        .subscribe(client =>{
+          this.client = client;
+          console.log("errror", this.client);
+          swal.fire('Photo uploaded', `Photo uploaded successfully : ${this.client.photo} `, 'success');
+        }
+        );
+      }
+       }
+
+
+
+
+
+
+
+
+

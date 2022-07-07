@@ -40,4 +40,18 @@ export class ClientService {
       headers: this.HttpHeaders,
     });
   }
+
+  uploadPhoto(file: File, id: number): Observable<Client> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post<Client>(`${this.url}/${id}/upload`, formData);
+  }
+
+
+
+
+
+
+
+
 }
