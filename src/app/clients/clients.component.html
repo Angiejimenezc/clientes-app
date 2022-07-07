@@ -1,10 +1,10 @@
 <div class="card border-secondary mb-3">
-  <div class="card-header text-letft">Clientes</div>
-  <div class="card-body text-secondary align-end">
-    <h5 class="card-title">Clients List</h5>
+  <div class="card-header d-flex justify-content-between align-items-centertext-letft">Clientes</div>
+  <div class="card-body text-secondary">
+
 
 <div class="my-2 align-start">
-  <button class="btn btn-outline-dark end" type="button" [routerLink]="['/clients/form']">Create Client</button>
+<button class="btn btn-outline-dark d-flex justify-content-between align-items-centertext-letft" type="button" [routerLink]="['/clients/form']">Create Client</button>
 </div>
 
 <div *ngIf="clientList.length == 0" class="alert alert-info">
@@ -19,14 +19,15 @@
           <th>SurName</th>
           <th>Email</th>
           <th>Date</th>
-          <th>Editar</th>
-          <th>Delete</th>
+          <th >Editar <i class="fas fa-edit cursor-pointer" title="Editar"></i></th>
+
+          <th>Delete <i class="fa fa-trash cursor-pointer" title="Delete"></i></th>
         </tr>
       </thead>
       <tbody class="text-center">
         <tr *ngFor="let client of clientList |  paginate: { itemsPerPage: 5, currentPage: pages }" >
           <td>{{ client.id}}</td>
-          <td>{{ client.name }}</td>
+          <td>{{ client.name | uppercase }}</td>
           <td>{{ client.surname}}</td>
           <td>{{ client.email}}</td>
           <td>{{ client.createAt}}</td>

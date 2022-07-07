@@ -12,6 +12,11 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormComponent } from './clients/form.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+// import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { DetailsComponent } from './clients/details/details.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +26,21 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ClientsComponent,
     ErrorPageComponent,
     FormComponent,
+    DetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgxPaginationModule],
-  providers: [ClientService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    // MatMomentDateModule,
+
+
+  ],
+  providers: [ClientService, { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

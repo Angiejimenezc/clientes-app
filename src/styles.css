@@ -16,3 +16,6 @@ body{
 }
 /* background: #a3d0e9; fallback for old browsers */
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

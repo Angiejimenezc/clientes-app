@@ -15,17 +15,10 @@ export class ClientService {
   constructor(private http: HttpClient) {}
 
   getClients(): Observable<Client[]> {
-    return this.http.get(this.url).pipe(
-      map((response) => {
-        let clientList = response as Client[];
-        return clientList.map((client) => {
-          client.name = client.name.toUpperCase();
-          client.createAt = formatDate(client.createAt, 'dd/MM/yyyy', 'en');
-          return client;
-        });
-      })
-    );
+    return this.http.get<Client[]>(this.url);
+
   }
+
   getClient(id: number): Observable<Client> {
     return this.http.get<Client>(`${this.url}/${id}`);
   }
