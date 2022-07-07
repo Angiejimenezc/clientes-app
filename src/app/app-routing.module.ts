@@ -3,13 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientsComponent } from './clients/clients.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormComponent } from './clients/form.component';
+import { DetailsComponent } from './clients/details/details.component';
 
 const routes: Routes = [
-  { path: '404', component: ErrorPageComponent },
-  { path: ' ', redirectTo: '/clients', pathMatch: 'full' },
+  { path: '', component: ClientsComponent },
   { path: 'clients', component: ClientsComponent },
   { path: 'clients/form', component: FormComponent },
-  { path: 'clients/form/:id', component: FormComponent}
+  { path: 'clients/form/:id', component: FormComponent},
+  { path: 'clients/profile/:id', component: DetailsComponent},
 ];
 
 @NgModule({

@@ -20,13 +20,14 @@
           <th>Email</th>
           <th>Date</th>
           <th >Editar <i class="fas fa-edit cursor-pointer" title="Editar"></i></th>
-
           <th>Delete <i class="fa fa-trash cursor-pointer" title="Delete"></i></th>
         </tr>
       </thead>
       <tbody class="text-center">
         <tr *ngFor="let client of clientList |  paginate: { itemsPerPage: 5, currentPage: pages }" >
-          <td>{{ client.id}}</td>
+
+
+          <td><button type="button" [routerLink]="['/clients/profile', client.id]" class="btn btn-success">{{client.id}}</button></td>
           <td>{{ client.name | uppercase }}</td>
           <td>{{ client.surname}}</td>
           <td>{{ client.email}}</td>
