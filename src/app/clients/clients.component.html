@@ -1,11 +1,10 @@
 <div class="card border-secondary mb-3">
-  <div class="card-header">Clientes</div>
-  <div class="card-body text-secondary">
+  <div class="card-header text-letft">Clientes</div>
+  <div class="card-body text-secondary align-end">
     <h5 class="card-title">Clients List</h5>
 
-<div class="my-2 text-letft">
-  <button class=" btn btn-rounded btn-dark" type="button" [routerLink]="['/clients/form']">Create Client</button>
-
+<div class="my-2 align-start">
+  <button class="btn btn-outline-dark end" type="button" [routerLink]="['/clients/form']">Create Client</button>
 </div>
 
 <div *ngIf="clientList.length == 0" class="alert alert-info">
@@ -24,18 +23,15 @@
           <th>Delete</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let client of clientList" class="text-center">
+      <tbody class="text-center">
+        <tr *ngFor="let client of clientList |  paginate: { itemsPerPage: 5, currentPage: pages }" >
           <td>{{ client.id}}</td>
           <td>{{ client.name }}</td>
           <td>{{ client.surname}}</td>
           <td>{{ client.email}}</td>
           <td>{{ client.createAt}}</td>
           <td>
-            <div>
-              <i class="fa-thin fa-trash-check"></i>
-            </div>
-            <button class=" btn btn-secondary" type="button" name="edit" [routerLink]="['/clients/form', client.id]">Edit</button>
+             <button class=" btn btn-secondary" type="button" name="edit" [routerLink]="['/clients/form', client.id]">Edit</button>
           </td>
              <td>
             <button class=" btn btn-secondary" type="button" name="delete" (click)="delete(client)">Delete</button>
@@ -45,6 +41,7 @@
         </tr>
       </tbody>
     </table>
+    <pagination-controls (pageChange)="pages = $event"></pagination-controls>
   </div>
 </div>
 

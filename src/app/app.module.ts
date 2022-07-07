@@ -11,6 +11,7 @@ import { ClientService } from './service/client.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormComponent } from './clients/form.component';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     ErrorPageComponent,
     FormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgxPaginationModule],
   providers: [ClientService],
   bootstrap: [AppComponent],
 })

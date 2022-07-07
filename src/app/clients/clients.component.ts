@@ -11,7 +11,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./clients.component.css'],
 })
 export class ClientsComponent implements OnInit {
-  clientList: Client[] = [];
+
+ clientList: Client[] = [];
+ pages: number = 1;
+ dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
 
   constructor(private clientSrv: ClientService) {}
 
