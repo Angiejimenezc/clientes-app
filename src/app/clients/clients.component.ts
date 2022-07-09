@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
-
 import { ClientService } from '../service/client.service';
+import { ModalService } from './modalService/modal.service';
 import { Client } from '../models/client';
 import Swal from 'sweetalert2';
 
@@ -22,7 +22,11 @@ export class ClientsComponent implements OnInit {
  clienteSeleccionado:Client;
 
 
-  constructor(private clientSrv: ClientService) {
+  constructor(
+
+    private clientSrv: ClientService,
+    private modalService: ModalService
+    ) {
 
   this.client = new Client(0, "", "", "", "", "");
   this.clienteSeleccionado = new Client(0, "", "", "", "", "" );
@@ -75,6 +79,7 @@ export class ClientsComponent implements OnInit {
 
       openModal(client: Client) {
       this.clienteSeleccionado = client;
+      this.modalService.openModal();
 
     }
 

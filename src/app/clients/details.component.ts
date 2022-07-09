@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/service/client.service';
-import { ActivatedRoute } from '@angular/router';
+import { ModalService } from './modalService/modal.service';
 import swal from 'sweetalert2';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -24,9 +24,10 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private clientSrv: ClientService,
-    private activateRoute: ActivatedRoute
+    public modalService: ModalService
   ) {
     this.client = new Client(0, "", "", "", "", "");
+
   }
 
   ngOnInit(): void {
@@ -63,4 +64,10 @@ export class DetailsComponent implements OnInit {
       console.log("aqui otra vez",e);
     }
   }
+
+  closeModal(){
+    this.modalService.closeModel();
+    //this.image = [];
+  }
+
 }
