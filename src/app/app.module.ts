@@ -10,14 +10,13 @@ import { ClientsComponent } from './clients/clients.component';
 import { ClientService } from './service/client.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormComponent } from './clients/form.component';
-import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DetailsComponent } from './clients/details.component';
 import { LoginComponent } from './user/login.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
