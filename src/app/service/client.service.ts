@@ -12,6 +12,9 @@ export class ClientService {
   private url = 'http://localhost:8080/api/clients';
 
   private HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+  private corsHeaders = new HttpHeaders({'Access-Control-Allow-Origin' : '*'});
+
+
 
   constructor(private http: HttpClient) {}
 

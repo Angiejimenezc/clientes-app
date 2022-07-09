@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { ClientService } from '../service/client.service';
 import { Client } from '../models/client';
@@ -9,19 +9,34 @@ import Swal from 'sweetalert2';
   selector: 'app-clients',
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.css'],
+  providers: [ClientService]
+
+
 })
 export class ClientsComponent implements OnInit {
 
+ client : Client;
  clientList: Client[] = [];
  pages: number = 1;
  dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
+ clienteSeleccionado:Client;
 
-  constructor(private clientSrv: ClientService) {}
+
+  constructor(private clientSrv: ClientService) {
+
+  this.client = new Client(0, "", "", "", "", "");
+  this.clienteSeleccionado = new Client(0, "", "", "", "", "" );
+  }
 
   ngOnInit(): void {
-    this.clientSrv.getClients().subscribe((clients) => {
-      this.clientList = clients;
-    });
+    this.clientSrv.getClients().subscribe(
+      (response) => {
+        this.clientList = response;
+
+    }
+
+    );
+
   }
 
   delete(client: Client): void {
@@ -55,6 +70,11 @@ export class ClientsComponent implements OnInit {
           });
         }
       });
+
+    }
+
+      openModal(client: Client) {
+      this.clienteSeleccionado = client;
 
     }
 
