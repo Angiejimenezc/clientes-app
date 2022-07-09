@@ -1,12 +1,15 @@
-import { Client } from '../models/client';
+import { Client } from "../models/client";
+
+
 
 export const CLIENTS: Client[] = [
   {
     id: 1,
     name: 'Angelica',
-    surname: 'JImenez',
+    surname: 'Jimenez',
     email: 'ajimenez@gmail.com',
     createAt: '2020-01-01',
+    photo:'',
   },
   {
     id: 2,
@@ -14,6 +17,8 @@ export const CLIENTS: Client[] = [
     surname: 'López',
     email: 'mlopez@gmail.com',
     createAt: '2020-01-01',
+    photo:''
+
   },
   {
     id: 3,
@@ -21,6 +26,7 @@ export const CLIENTS: Client[] = [
     surname: 'Roca',
     email: 'roca@gmail.com',
     createAt: '2020-01-01',
+    photo:''
   },
   {
     id: 4,
@@ -28,6 +34,7 @@ export const CLIENTS: Client[] = [
     surname: 'Jan',
     email: 'jj@gmail.com',
     createAt: '2020-01-01',
+    photo:''
   },
   {
     id: 5,
@@ -35,6 +42,7 @@ export const CLIENTS: Client[] = [
     surname: 'Anms',
     email: 'ams@gmail.com',
     createAt: '2020-01-01',
+    photo:''
   },
   {
     id: 6,
@@ -42,5 +50,6 @@ export const CLIENTS: Client[] = [
     surname: 'Portman',
     email: 'portaman@gmail.com',
     createAt: '2020-01-01',
+    photo:''
   },
 ];

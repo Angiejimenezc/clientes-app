@@ -14,9 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule} from '@angular/material/datepicker';
-// import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { DetailsComponent } from './clients/details/details.component';
+import { DetailsComponent } from './clients/details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { DetailsComponent } from './clients/details/details.component';
     ClientsComponent,
     ErrorPageComponent,
     FormComponent,
-    DetailsComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +35,7 @@ import { DetailsComponent } from './clients/details/details.component';
     NgxPaginationModule,
     BrowserAnimationsModule,
     MatDatepickerModule,
-    // MatMomentDateModule,
+
 
 
   ],

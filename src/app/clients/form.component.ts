@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Client } from '../models/client';
-import { ClientService } from '../service/client.service';
 import swal from 'sweetalert2';
 import { NgForm } from '@angular/forms';
+import { ClientService } from 'src/app/service/client.service';
+import { Client } from 'src/app/models/client';
 
 
 @Component({
