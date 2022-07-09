@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DetailsComponent } from './clients/details.component';
+import { LoginComponent } from './user/login.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DetailsComponent } from './clients/details.component';
     ClientsComponent,
     ErrorPageComponent,
     FormComponent,
-    DetailsComponent
+    DetailsComponent,
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
