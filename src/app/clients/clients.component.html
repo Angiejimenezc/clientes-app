@@ -19,9 +19,9 @@
     <table class="table table-striped table-bordered" *ngIf="clientList.length > 0">
       <thead>
         <tr class= "text-center">
-          <th>id</th>
+          <th>Photo Perfil</th>
           <th>Name</th>
-          <th>SurName</th>
+          <th>Lastname</th>
           <th>Email</th>
           <th>Date</th>
           <th >Editar <i class="fas fa-edit cursor-pointer" title="Editar"></i></th>
@@ -32,7 +32,12 @@
         <tr *ngFor="let client of clientList |  paginate: { itemsPerPage: 5, currentPage: pages }" >
 
 
-          <td><button type="button" (click)="openModal(client)" class="btn btn-warning">{{client.id}}</button></td>
+          <td> <img (click)="openModal(client)"
+
+                  src="http://localhost:8080/api/uploads/img/{{ client.photo }}"
+                  class="img-fluid"
+                  alt="image"
+                />
           <td>{{ client.name | uppercase }}</td>
           <td>{{ client.surname}}</td>
           <td>{{ client.email}}</td>
