@@ -27,7 +27,7 @@
         <tr *ngFor="let client of clientList |  paginate: { itemsPerPage: 5, currentPage: pages }" >
 
 
-          <td><button type="button" [routerLink]="['/clients/profile', client.id]" class="btn btn-success">{{client.id}}</button></td>
+          <td><button type="button" [routerLink]="['/clients/profile', client.id]" class="btn btn-warning">{{client.id}}</button></td>
           <td>{{ client.name | uppercase }}</td>
           <td>{{ client.surname}}</td>
           <td>{{ client.email}}</td>

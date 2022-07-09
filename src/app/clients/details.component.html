@@ -22,12 +22,12 @@
 
           </div>
           <div class="input-group-append">
-            <button (click)="upLoadPhoto()" class="btn btn-outline-secondary bg-warning" type="button">Upload</button>
+            <button (click)="uploadFile()" class="btn btn-outline-secondary bg-warning" type="button">Upload</button>
           </div>
         </div>
       </div>
          <div class="col-sm">
-          <img *ngIf="client.photo" [src]="client.photo" class="img-fluid" alt="Responsive image">
+          <img *ngIf="client?.photo" [src]="client.photo" src="http://localhost:8080/api/uploads/img/{{client.photo}}" class="img-fluid" alt="Responsive image">
 
       </div>
     </div>
