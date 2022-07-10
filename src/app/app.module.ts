@@ -17,6 +17,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DetailsComponent } from './clients/details.component';
 import { LoginComponent } from './user/login.component';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './user/register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     FormComponent,
     DetailsComponent,
     LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [
