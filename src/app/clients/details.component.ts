@@ -1,9 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/service/client.service';
+import { InvoiceService } from '../service/invoice.service';
 import { ModalService } from './modalService/modal.service';
 import swal from 'sweetalert2';
 import { HttpHeaders } from '@angular/common/http';
+import { Invoice } from '../invoice/models/invoice';
+
+
 
 @Component({
   selector: 'app-details',
@@ -12,21 +16,25 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class DetailsComponent implements OnInit {
 
-  @Input()
-
-  client: Client;
+  @Input() client: Client;
   title: string = 'Profile';
   image: any[] = [];
   private photephotopicked!: File;
+  invoice: Invoice[] = [];
 
   //private corsHeaders = new HttpHeaders({'Access-Control-Allow-Origin' : '*'});
 
 
   constructor(
     private clientSrv: ClientService,
-    public modalService: ModalService
+    private InvoiceService: InvoiceService,
+    public  modalService: ModalService
+
   ) {
-    this.client = new Client(0, "", "", "", "", "");
+
+    this.client  = new Client();
+    console.log('Este :>> ', this.client);
+
 
   }
 

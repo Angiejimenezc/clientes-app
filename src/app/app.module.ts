@@ -18,6 +18,7 @@ import { DetailsComponent } from './clients/details.component';
 import { LoginComponent } from './user/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './user/register.component';
+import { DetailsInvoiceComponent } from './invoice/details-invoice.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RegisterComponent } from './user/register.component';
     DetailsComponent,
     LoginComponent,
     RegisterComponent,
+    DetailsInvoiceComponent,
 
   ],
   imports: [

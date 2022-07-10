@@ -19,7 +19,7 @@ export class ClientsComponent implements OnInit {
  clientList: Client[] = [];
  pages: number = 1;
  dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
- clienteSeleccionado:Client;
+ clienteSeleccionado!:Client;
 
 
   constructor(
@@ -28,8 +28,10 @@ export class ClientsComponent implements OnInit {
     private modalService: ModalService
     ) {
 
-  this.client = new Client(0, "", "", "", "", "");
-  this.clienteSeleccionado = new Client(0, "", "", "", "", "" );
+  this.client = new Client();
+  console.log('object :>> ', this.client);
+  this.clienteSeleccionado;
+  console.log('object :>> ', this.clienteSeleccionado);
   }
 
   ngOnInit(): void {

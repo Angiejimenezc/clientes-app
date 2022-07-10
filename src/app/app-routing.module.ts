@@ -1,3 +1,4 @@
+import { DetailsInvoiceComponent } from './invoice/details-invoice.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientsComponent } from './clients/clients.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'clients/form', component: FormComponent },
   { path: 'clients/form/:id', component: FormComponent},
   { path:  'login', component: LoginComponent},
+  { path: 'invoice/:id' , component: DetailsInvoiceComponent},
   // { path: 'register', component:  }
 ];
 

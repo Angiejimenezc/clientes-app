@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
   @ViewChild('form')
   form!: NgForm;
 
-  public client = new Client(0, '', '', '', '','');
+  public client = new Client();
   public title: string = 'Create Clients';
 
 
@@ -51,6 +51,7 @@ export class FormComponent implements OnInit {
 
   create(): void {
     this.clientSrv.create(this.client).subscribe((client) => {
+      console.log('create :>> ', this.client);
       this.router.navigate(['/clients']);
       swal.fire(
         'Client Created',
@@ -58,7 +59,7 @@ export class FormComponent implements OnInit {
         'success'
       );
     });
-    console.log(this.client);
+    console.log("No funciona" , this.client);
   }
 
   update(): void {
