@@ -23,7 +23,7 @@ export class DetailsInvoiceComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
+   ngOnInit(): void {
 //     this.activateRoute.paramMap.subscribe(params => {
 //     let id = params.get('id');
 //   this.invoiceSrv.getInvoice(id).subscribe(invoice => {
